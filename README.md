@@ -29,11 +29,14 @@ Ambiente para estudo dos principais frameworks big data em docker.
          docker image ls
          docker container ls
 
-#### Parar containers
+#### Parar todos containers
          docker stop $(docker ps -a -q)
          
-#### Remover containers
+#### Remover todos containers
          docker rm $(docker ps -a -q)
+         
+#### Dados do containers
+         docker container inspect [nome do container]
 
 ## Acesso WebUI dos Frameworks
  
