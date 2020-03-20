@@ -12,11 +12,9 @@ Ambiente para estudo dos principais frameworks big data em docker.
           git clone https://github.com/fabiogjardim/bigdata_docker.git
 
 #### Instalar o Docker
-   ##### No Windows ou Mac:
-   ![Docker Toolbox](https://docs.docker.com/toolbox/overview/)
+   ##### No Windows ou Mac: ![Docker Toolbox](https://docs.docker.com/toolbox/overview/)
    
-   ##### No Ubuntu:
-   ![Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+   ##### No Ubuntu: ![Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
       
    ##### Verificar a instação:
    
@@ -33,42 +31,46 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
 ## ACESSO
 
-#### Acessando WebUI dos Frameworks
+#### Acesso WebUI dos Frameworks
  
-      HDFS *http://localhost:50070*
-      Presto *http://localhost:8080*
-      Hbase *http://localhost:16010/master-status*
-      Mongo Express *http://localhost:8081*
-      Kafka Manager *http://localhost:9000*
-      Metabase *http://localhost:3000*
-      Nifi *http://localhost:9090*
-      Jupyter Spark *http://localhost:8889*
-      Hue *http://localhost:8888*
+* HDFS *http://localhost:50070*
+* Presto *http://localhost:8080*
+* Hbase *http://localhost:16010/master-status*
+* Mongo Express *http://localhost:8081*
+* Kafka Manager *http://localhost:9000*
+* Metabase *http://localhost:3000*
+* Nifi *http://localhost:9090*
+* Jupyter Spark *http://localhost:8889*
+* Hue *http://localhost:8888*
 
-#### Acessando o HDFS
+#### Acesso por shell
+
+   ##### HDFS
 
           docker exec -it datanode bash
 
-#### Acessando HBase
+   ##### HBase
 
           docker exec -it hbase-master bash
 
-#### Acessando Sqoop
+   ##### Sqoop
 
           docker exec -it datanode bash
         
-#### Acessando Kafka
+   ##### Kafka
 
           docker exec -it kafka bash
 
-#### JDBC MySQL
+#### Acesso JDBC
+
+   ##### MySQL
           jdbc:mysql://database/employees
 
-#### JDBC Hive
+   ##### Hive
 
           jdbc:hive2://hive-server:10000/default
 
-#### JDBC Preto
+   ##### Preto
 
           jdbc:presto://presto:8080/hive/default
       
