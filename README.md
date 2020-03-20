@@ -74,7 +74,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
           jdbc:hive2://hive-server:10000/default
 
-   ##### Preto
+   ##### Presto
 
           jdbc:presto://presto:8080/hive/default
  
