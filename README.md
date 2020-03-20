@@ -6,81 +6,89 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
 ![Ecossistema](ecosystem.jpeg)
 
-## COMO FAZER
+## SETUP
 
-1. - Baixar o repo
-    
+#### Baixar o repo
           git clone https://github.com/fabiogjardim/bigdata_docker.git
 
-2. - Instalar o Docker
-  
-   1. - No Windows ou Mac:
+#### Instalar o Docker
+   ##### No Windows ou Mac:
    ![Docker Toolbox](https://docs.docker.com/toolbox/overview/)
    
-   2. - No Ubuntu:
+   ##### No Ubuntu:
    ![Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
       
-   Verificar a instação:
+   ##### Verificar a instação:
    
         docker version
         docker-compose version
  
-3. - No diretorio bigdata_docker, executar o docker-compose
-   
+#### No diretorio bigdata_docker, executar o docker-compose
           docker-compose up -d
         
-4. - Verificando imagens e containers
+#### Verificando imagens e containers
  
          docker image ls
          docker container ls
-       
-5. - Acessando WebUI dos Frameworks
+
+## ACESSO
+
+#### Acessando WebUI dos Frameworks
  
       HDFS *http://localhost:50070*
-      
       Presto *http://localhost:8080*
-    
       Hbase *http://localhost:16010/master-status*
-    
       Mongo Express *http://localhost:8081*
-    
       Kafka Manager *http://localhost:9000*
-    
       Metabase *http://localhost:3000*
-    
       Nifi *http://localhost:9090*
-      
       Jupyter Spark *http://localhost:8889*
-    
       Hue *http://localhost:8888*
 
-6. - Acessando o HDFS
+#### Acessando o HDFS
 
           docker exec -it datanode bash
 
-7. - Acessando HBase
+#### Acessando HBase
 
           docker exec -it hbase-master bash
 
-8. - Acessando Sqoop
+#### Acessando Sqoop
 
           docker exec -it datanode bash
         
-9. - Acessando Kafka
+#### Acessando Kafka
 
           docker exec -it kafka bash
 
-10. - JDBC MySQL
-
+#### JDBC MySQL
           jdbc:mysql://database/employees
 
-11. - JDBC Hive
+#### JDBC Hive
 
           jdbc:hive2://hive-server:10000/default
 
-12. - JDBC Preto
+#### JDBC Preto
 
           jdbc:presto://presto:8080/hive/default
       
 
 [Docker Hub](https://hub.docker.com/u/fjardim)
+
+## Documentação Oficial
+
+* https://zookeeper.apache.org/
+* https://kafka.apache.org/
+* https://nifi.apache.org/
+* https://prestodb.io/
+* https://spark.apache.org/
+* https://www.mongodb.com/
+* https://www.metabase.com/
+* https://jupyter.org/
+* https://hbase.apache.org/
+* https://sqoop.apache.org/
+* https://hadoop.apache.org/
+* https://hive.apache.org/
+* https://gethue.com/
+* https://github.com/yahoo/CMAK
+* https://www.docker.com/
