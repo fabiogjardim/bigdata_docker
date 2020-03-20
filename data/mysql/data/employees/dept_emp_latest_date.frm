@@ -1,0 +1,15 @@
+TYPE=VIEW
+query=select `employees`.`dept_emp`.`emp_no` AS `emp_no`,max(`employees`.`dept_emp`.`from_date`) AS `from_date`,max(`employees`.`dept_emp`.`to_date`) AS `to_date` from `employees`.`dept_emp` group by `employees`.`dept_emp`.`emp_no`
+md5=22c43b757a14fb7a1b1d4d06a8ccac89
+updatable=0
+algorithm=0
+definer_user=bigdata
+definer_host=localhost
+suid=2
+with_check_option=0
+timestamp=2020-03-18 22:57:24
+create-version=1
+source=SELECT emp_no, MAX(from_date) AS from_date, MAX(to_date) AS to_date\n    FROM dept_emp\n    GROUP BY emp_no
+client_cs_name=latin1
+connection_cl_name=latin1_swedish_ci
+view_body_utf8=select `employees`.`dept_emp`.`emp_no` AS `emp_no`,max(`employees`.`dept_emp`.`from_date`) AS `from_date`,max(`employees`.`dept_emp`.`to_date`) AS `to_date` from `employees`.`dept_emp` group by `employees`.`dept_emp`.`emp_no`
