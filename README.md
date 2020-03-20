@@ -24,14 +24,18 @@ Ambiente para estudo dos principais frameworks big data em docker.
 #### No diretorio bigdata_docker, executar o docker-compose
           docker-compose up -d
         
-#### Verificando imagens e containers
+#### Verificar imagens e containers
  
          docker image ls
          docker container ls
 
-## ACESSO
+#### Parar containers
+         docker stop $(docker ps -a -q)
+         
+#### Remover containers
+         docker rm $(docker ps -a -q)
 
-#### Acesso WebUI dos Frameworks
+## Acesso WebUI dos Frameworks
  
 * HDFS *http://localhost:50070*
 * Presto *http://localhost:8080*
@@ -43,7 +47,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
 * Jupyter Spark *http://localhost:8889*
 * Hue *http://localhost:8888*
 
-#### Acesso por shell
+## Acesso por shell
 
    ##### HDFS
 
@@ -61,7 +65,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
           docker exec -it kafka bash
 
-#### Acesso JDBC
+## Acesso JDBC
 
    ##### MySQL
           jdbc:mysql://database/employees
@@ -73,7 +77,8 @@ Ambiente para estudo dos principais frameworks big data em docker.
    ##### Preto
 
           jdbc:presto://presto:8080/hive/default
-      
+ 
+## Imagens     
 
 [Docker Hub](https://hub.docker.com/u/fjardim)
 
