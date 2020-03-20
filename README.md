@@ -12,9 +12,9 @@ Ambiente para estudo dos principais frameworks big data em docker.
           git clone https://github.com/fabiogjardim/bigdata_docker.git
 
 #### Instalar o Docker
-   ##### No Windows ou Mac: ![Docker Toolbox](https://docs.docker.com/toolbox/overview/)
+   ##### No Windows ou Mac: [Docker Toolbox](https://docs.docker.com/toolbox/overview/)
    
-   ##### No Ubuntu: ![Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+   ##### No Ubuntu: [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
       
    ##### Verificar a instação:
    
