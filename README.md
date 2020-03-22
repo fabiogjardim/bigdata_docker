@@ -50,8 +50,10 @@ Ambiente para estudo dos principais frameworks big data em docker.
          **O arquvo bat irá criar a VM default com disco de 100GB, memória de 8GB, drive do repo compartilhado e todas as portas necessárias mapeadas  
 
 ## INICIANDO O AMBIENTE
+   
+  *No Windows abrir o Docker Quickstart Terminal*
 
-#### No diretorio bigdata_docker, executar o docker-compose
+#### Em um terminal, no diretorio bigdata_docker, executar o docker-compose
           docker-compose up -d
         
 ### Verificar imagens e containers
