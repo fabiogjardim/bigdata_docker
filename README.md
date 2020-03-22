@@ -19,23 +19,43 @@ Ambiente para estudo dos principais frameworks big data em docker.
          docker-compose version
         
 ### Como instalar o git
-   * #### [Como instalar o git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
+   * #### [Instalação do git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
 
 ## SETUP
 
 ### Criação do diretório docker
    * #### No Windows:
-      * ##### Criar na raiz do seu drive um diretório chamado docker
+      * ##### Criar na raiz do seu drive o diretório docker
          ##### ex:
             D:\docker
           
    * #### No Linux:
-      * ##### Criar um diretório docker na home do usuário
+      * ##### Criar o diretório na home do usuário
         ##### ex:
             /home/user/docker
 
 ### Baixar o repo dentro diretório docker
           git clone https://github.com/fabiogjardim/bigdata_docker.git
+
+### No diretório bigdata_docker vai existir os seguintes objetos
+          aux/
+          data/
+          docker-compose_windows.yml
+          docker-compose.yml
+          .git/
+          jars/
+          README.md
+          virtualbox_config.bat
+
+   * #### No Windows:
+      * ##### renomear o arquivo docker-compose.yml para docker-compose_linux.yml
+            mv docker-compose.yml docker-compose_linux.yml
+      * ##### renomear o arquivo docker-compose_windows.yml para docker-compose.yml
+            mv docker-compose_windows.yml docker-compose.yml
+      * ##### Executar o arquivo virtualbox_config.bat
+         *O arquvo bat irá criar a VM default disco de 100GB, memória de 8GB, compartilhar o drive do repo e mapear todas as portas necessárias*  
+
+## INICIANDO O AMBIENTE
 
 ### No diretorio bigdata_docker, executar o docker-compose
           docker-compose up -d
