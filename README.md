@@ -114,7 +114,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
           jdbc:presto://presto:8080/hive/default
 
-## Usuário e senhas
+## Usuários e senhas
 
    ##### Hue
     Usuário: admin
