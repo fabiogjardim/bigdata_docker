@@ -189,7 +189,7 @@ services:
           memory: 500m
     
  
-  hbase-region:
+  hbase-regionserver:
     image: fjardim/hbase-regionserver
     container_name: hbase-regionserver
     hostname: hbase-regionserver

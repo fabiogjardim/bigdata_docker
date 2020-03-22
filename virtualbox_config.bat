@@ -28,7 +28,9 @@ echo
 echo *****************************************
 echo **** CONFIGURANDO DISCOS COMPARTILHADOS
 echo *****************************************
-VBoxManage.exe sharedfolder add default --name "d" --hostpath "\\?\d:\" --automount
+
+:: se a unidade de disco não for a D: altera para a unidade correta
+VBoxManage.exe sharedfolder add default --name "d" --hostpath "d:/" --automount
 VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root 1
 VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/d 1
 
@@ -59,6 +61,10 @@ VBoxManage.exe modifyvm default --natpf1 "hive,tcp,,10000,,10000"
 VBoxManage.exe modifyvm default --natpf1 "mysql,tcp,,3306,,3306"
 VBoxManage.exe modifyvm default --natpf1 "zookeeper,tcp,,2181,,2181"
 VBoxManage.exe modifyvm default --natpf1 "kafka,tcp,,9092,,9092"
+VBoxManage.exe modifyvm default --natpf1 "spark1,tcp,,4040,,4040"
+VBoxManage.exe modifyvm default --natpf1 "spark2,tcp,,4041,,4041"
+VBoxManage.exe modifyvm default --natpf1 "spark3,tcp,,4042,,4042"
+VBoxManage.exe modifyvm default --natpf1 "spark4,tcp,,4043,,4043"
 
 echo *****************************************
 echo **************** FIM ********************
