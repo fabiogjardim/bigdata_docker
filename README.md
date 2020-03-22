@@ -8,11 +8,12 @@ Ambiente para estudo dos principais frameworks big data em docker.
 ![Ecossistema](ecosystem.jpeg)
 
 ## SOFTWARES NECESSÁRIOS
-#### Para o uso do ambiente vamos utilizar git e docker
+#### Para a criação e uso do ambiente vamos utilizar git e docker
    * Instalação do Docker no [Windows ou Mac](https://docs.docker.com/toolbox/overview/) ou no [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
    *  [Instalação do git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
 
 ## SETUP
+*OBS: Esse passo deve ser realizado apena uma vez, após o ambiente criado utilizar o docker-compose para iniciar os containers
 
 #### Criação do diretório docker
    *  No Windows:
