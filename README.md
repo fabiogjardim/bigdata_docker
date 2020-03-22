@@ -31,8 +31,6 @@ Ambiente para estudo dos principais frameworks big data em docker.
 ![ls](ls.JPG)
 
    *  No Windows:
-      *renomear o arquivo docker-compose.yml para docker-compose_linux.yml*
-          mv docker-compose.yml docker-compose_linux.yml
       *renomear o arquivo docker-compose_windows.yml para docker-compose.yml*
           mv docker-compose_windows.yml docker-compose.yml
       *Executar o arquivo virtualbox_config.bat*
