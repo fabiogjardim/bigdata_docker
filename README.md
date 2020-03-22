@@ -31,11 +31,12 @@ Ambiente para estudo dos principais frameworks big data em docker.
 ![ls](ls.JPG)
 
    *  No Windows:
+
       *renomear o arquivo docker-compose_windows.yml para docker-compose.yml*
 
             mv docker-compose_windows.yml docker-compose.yml
       *Executar o arquivo virtualbox_config.bat*
-         <br>O arquvo bat irá criar a VM default com disco de 100GB, memória de 8GB, drive do repo compartilhado e todas as portas necessárias mapeadas</br>
+         <br>O arquvo bat cria/reacria a VM default com disco de até 100GB, 8GB de memória, drive do repo compartilhado como /d e todas as portas necessárias mapeadas</br>
          <br>OBS: se o ser driver raiz for diferente de D:, altere o arquivo virutalbox_config.bat na parte indicada no comentário</br>  
    *  No Linux: *Não é necessário alterar nem executar nada*
 
