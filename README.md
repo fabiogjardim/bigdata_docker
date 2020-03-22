@@ -42,6 +42,8 @@ Ambiente para estudo dos principais frameworks big data em docker.
       
          <br>O arquvo bat irá criar a VM default com disco de 100GB, memória de 8GB, drive do repo compartilhado e todas as portas necessárias mapeadas</br>
          <br>OBS: se o ser driver raiz for diferente de D:, altere o arquivo virutalbox_config.bat na parte indicada no comentário</br>  
+   *  No Linux:
+      *Não é necessário alterar nada nem executar nada*
 
 ## INICIANDO O AMBIENTE
    
