@@ -61,14 +61,30 @@ Ambiente para estudo dos principais frameworks big data em docker.
          docker image ls
          docker container ls
 
+## SOLUCIONANDO PROBLEMAS 
+   
+  *No Windows abrir o Docker Quickstart Terminal*
+
+### Parar um containers
+         docker stop [nome do container]      
+
 ### Parar todos containers
          docker stop $(docker ps -a -q)
-         
+  
+### Remover um container
+         docker rm [nome do container]
+
 ### Remover todos containers
-         docker rm $(docker ps -a -q)
-         
+         docker rm $(docker ps -a -q)         
+
 ### Dados do containers
          docker container inspect [nome do container]
+
+### Iniciar um container
+         docker-compose up -d [nome do container]
+
+### Iniciar todos os containers
+         docker-compose up -d 
 
 ## Acesso WebUI dos Frameworks
  
