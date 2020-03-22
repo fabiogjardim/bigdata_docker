@@ -113,8 +113,22 @@ Ambiente para estudo dos principais frameworks big data em docker.
    ##### Presto
 
           jdbc:presto://presto:8080/hive/default
- 
-## Imagens     
+
+## Usuário e senhas
+
+   ##### Hue
+    Usuário: admin
+    Senha: admin
+
+   ##### Metabase
+    Usuário: bigdata@class.com
+    Senha: bigdata123 
+
+   ##### MySQL
+    Usuário: root
+    Senha: secret
+
+## Imagens   
 
 [Docker Hub](https://hub.docker.com/u/fjardim)
 
