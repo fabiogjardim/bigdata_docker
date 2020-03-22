@@ -13,7 +13,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
    *  [Instalação do git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
 
 ## SETUP
-*OBS: Esse passo deve ser realizado apena uma vez, após o ambiente criado utilizar o docker-compose para iniciar os containers
+*OBS: Esse passo deve ser realizado apena uma vez. Após o ambiente criado, utilizar o docker-compose para iniciar os containers como mostrado no tópico INICIANDO O AMBIENTE*
 
 #### Criação do diretório docker
    *  No Windows:
@@ -28,15 +28,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
           git clone https://github.com/fabiogjardim/bigdata_docker.git
 
 ### No diretório bigdata_docker vai existir os seguintes objetos
-
-          aux/
-          data/
-          docker-compose_windows.yml
-          docker-compose.yml
-          .git/
-          jars/
-          README.md
-          virtualbox_config.bat
+![ls](ls.JPG)
 
    *  No Windows:
       *renomear o arquivo docker-compose.yml para docker-compose_linux.yml*
@@ -52,15 +44,20 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
 ## INICIANDO O AMBIENTE
    
-  *No Windows abrir o Docker Quickstart Terminal*
+  *No Windows abrir o Docker Quickstart Terminal, do Linux um terminal*
 
 ### Em um terminal, no diretorio bigdata_docker, executar o docker-compose
-          docker-compose up -d
-        
+          docker-compose up -d        
+
 ### Verificar imagens e containers
  
          docker image ls
+
+![docker image ls](docker_image_ls.JPG)
+
          docker container ls
+
+![docker container](docker_container_ls.JPG)
 
 ## SOLUCIONANDO PROBLEMAS 
    
@@ -86,6 +83,9 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
 ### Iniciar todos os containers
          docker-compose up -d 
+
+### Acessar log do container
+         docker container logs [nome do container] 
 
 ## Acesso WebUI dos Frameworks
  
