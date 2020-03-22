@@ -30,6 +30,7 @@ echo **** CONFIGURANDO DISCOS COMPARTILHADOS
 echo *****************************************
 
 :: se a unidade de disco não for a D: altera para a unidade correta
+:: altear apenas o "d:/" para "c:/"
 VBoxManage.exe sharedfolder add default --name "d" --hostpath "d:/" --automount
 VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root 1
 VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/d 1
