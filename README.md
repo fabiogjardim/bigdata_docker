@@ -9,7 +9,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
 ## PREREQ
 ### Para o uso do ambiente vamos utilizar git e docker
 
-### Instalar o Docker
+### Como instalar o Docker
    * #### No Windows ou Mac: [Docker Toolbox](https://docs.docker.com/toolbox/overview/)
    * #### No Ubuntu: [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
       
@@ -18,21 +18,21 @@ Ambiente para estudo dos principais frameworks big data em docker.
          docker version
          docker-compose version
         
-### Instalar o git
+### Como instalar o git
    * #### [Como instalar o git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
 
 ## SETUP
 
-### Baixar o repo no github
-   * #### Para Windows:
+### Criação do diretório docker
+   * #### No Windows:
       * ##### Criar na raiz do seu drive um diretório chamado docker
-   ##### ex:
-          D:\docker
+         ##### ex:
+            D:\docker
           
-   #### Para Linux:
-   ##### Criar um diretório docker na home do usuário
-   ##### ex:
-          /home/user/docker
+   * #### No Linux:
+      * ##### Criar um diretório docker na home do usuário
+        ##### ex:
+            /home/user/docker
 
 ### Baixar o repo dentro diretório docker
           git clone https://github.com/fabiogjardim/bigdata_docker.git
