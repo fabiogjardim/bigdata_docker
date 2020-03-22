@@ -8,34 +8,45 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
 ## SETUP
 
-#### Baixar o repo
-          git clone https://github.com/fabiogjardim/bigdata_docker.git
-
-#### Instalar o Docker
-   ##### No Windows ou Mac: [Docker Toolbox](https://docs.docker.com/toolbox/overview/)
-   
-   ##### No Ubuntu: [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+### Instalar o Docker
+   #### No Windows ou Mac: [Docker Toolbox](https://docs.docker.com/toolbox/overview/)
+   #### No Ubuntu: [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
       
-   ##### Verificar a instação:
-   
+   #### Verificar a instação:
         docker version
         docker-compose version
- 
-#### No diretorio bigdata_docker, executar o docker-compose
+        
+### Instalar o [git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
+
+### Baixar o repo no github
+   #### Para Windows:
+   ##### Criar na raiz do seu drive um diretório chamado docker
+   ##### ex:
+          D:\docker
+          
+   #### Para Linux:
+   ##### Criar um diretório docker na home do usuário
+   ##### ex:
+          /home/user/docker
+
+### Baixar o repo dentro diretório docker
+          git clone https://github.com/fabiogjardim/bigdata_docker.git
+
+### No diretorio bigdata_docker, executar o docker-compose
           docker-compose up -d
         
-#### Verificar imagens e containers
+### Verificar imagens e containers
  
          docker image ls
          docker container ls
 
-#### Parar todos containers
+### Parar todos containers
          docker stop $(docker ps -a -q)
          
-#### Remover todos containers
+### Remover todos containers
          docker rm $(docker ps -a -q)
          
-#### Dados do containers
+### Dados do containers
          docker container inspect [nome do container]
 
 ## Acesso WebUI dos Frameworks
