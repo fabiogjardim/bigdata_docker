@@ -53,7 +53,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
    
   *No Windows abrir o Docker Quickstart Terminal*
 
-#### Em um terminal, no diretorio bigdata_docker, executar o docker-compose
+### Em um terminal, no diretorio bigdata_docker, executar o docker-compose
           docker-compose up -d
         
 ### Verificar imagens e containers
