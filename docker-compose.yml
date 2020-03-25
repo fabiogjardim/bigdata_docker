@@ -10,7 +10,7 @@ services:
     environment:
       - CLUSTER_NAME=test
     env_file:
-      - ./hadoop/hadoop-hive.env
+      - ./data/hadoop/hadoop-hive.env
     ports:
       - "50070:50070"
     deploy:
@@ -26,7 +26,7 @@ services:
       - ./data/hdfs/datanode:/hadoop/dfs/data
       - ./hadoop/bank:/bank
     env_file:
-      - ./hadoop/hadoop-hive.env
+      - ./data/hadoop/hadoop-hive.env
     environment:
       SERVICE_PRECONDITION: "namenode:50070"
     depends_on:
@@ -43,7 +43,7 @@ services:
     container_name: hive-server
     hostname: hive_server
     env_file:
-      - ./hadoop/hadoop-hive.env
+      - ./data/hadoop/hadoop-hive.env
     environment:
       HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:postgresql://hive-metastore/metastore"
       SERVICE_PRECONDITION: "hive-metastore:9083"
@@ -61,7 +61,7 @@ services:
     container_name: hive_metastore
     hostname: hive_metastore
     env_file:
-      - ./hadoop/hadoop-hive.env
+      - ./data/hadoop/hadoop-hive.env
     command: /opt/hive/bin/hive --service metastore
     environment:
       SERVICE_PRECONDITION: "namenode:50070 datanode:50075 hive-metastore-postgresql:5432"
@@ -290,7 +290,7 @@ services:
     build:
       context:  .
     env_file:
-      - ./jupyter/jupyter.env
+      - ./data/jupyter/jupyter.env
     ports:
       - 8889:8889
       - 4040:4040
