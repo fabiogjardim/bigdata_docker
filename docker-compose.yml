@@ -2,7 +2,8 @@ version: '3'
 services:
 
   namenode:
-    image: fjardim/namenode_sqoop
+    #image: bde2020/hadoop-namenode:2.0.0-hadoop2.7.4-java8
+    image: namenode_sqoop
     container_name: namenode
     hostname: namenode
     volumes:
@@ -10,7 +11,7 @@ services:
     environment:
       - CLUSTER_NAME=test
     env_file:
-      - ./hadoop/hadoop-hive.env
+      - ./data/hadoop/hadoop-hive.env
     ports:
       - "50070:50070"
     deploy:
@@ -19,14 +20,14 @@ services:
           memory: 500m
   
   datanode:
-    image: fjardim/datanode
+    image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
     container_name: datanode
     hostname: datanode
     volumes:
       - ./data/hdfs/datanode:/hadoop/dfs/data
-      - ./hadoop/bank:/bank
+      - ./data/hadoop/bank:/bank
     env_file:
-      - ./hadoop/hadoop-hive.env
+      - ./data/hadoop/hadoop-hive.env
     environment:
       SERVICE_PRECONDITION: "namenode:50070"
     depends_on:
@@ -39,11 +40,11 @@ services:
           memory: 500m
   
   hive-server:
-    image: fjardim/hive
+    image: bde2020/hive:2.3.2-postgresql-metastore
     container_name: hive-server
     hostname: hive_server
     env_file:
-      - ./hadoop/hadoop-hive.env
+      - ./data/hadoop/hadoop-hive.env
     environment:
       HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:postgresql://hive-metastore/metastore"
       SERVICE_PRECONDITION: "hive-metastore:9083"
@@ -57,11 +58,11 @@ services:
           memory: 500m
   
   hive-metastore:
-    image: fjardim/hive
+    image: bde2020/hive:2.3.2-postgresql-metastore
     container_name: hive_metastore
     hostname: hive_metastore
     env_file:
-      - ./hadoop/hadoop-hive.env
+      - ./data/hadoop/hadoop-hive.env
     command: /opt/hive/bin/hive --service metastore
     environment:
       SERVICE_PRECONDITION: "namenode:50070 datanode:50075 hive-metastore-postgresql:5432"
@@ -75,7 +76,7 @@ services:
           memory: 500m
   
   hive-metastore-postgresql:
-    image: fjardim/hive-metastore
+    image: bde2020/hive-metastore-postgresql:2.3.0
     container_name: hive-metastore-postgresql
     hostname: hive_metastore_postgresql
     volumes:
@@ -88,14 +89,14 @@ services:
           memory: 500m
 
   hue:
-    image: fjardim/hue
+    image: gethue/hue:20191107-135001
     hostname: hue
     container_name: hue
     dns: 8.8.8.8
     ports:
     - "8888:8888"
     volumes:
-      - ./hue/hue-overrides.ini:/usr/share/hue/desktop/conf/z-hue.ini
+      - ./data/hue/hue-overrides.ini:/usr/share/hue/desktop/conf/z-hue.ini
     depends_on:
       - "database"
     deploy:
@@ -104,7 +105,7 @@ services:
           memory: 500m
   
   database:
-    image: fjardim/mysql
+    image: mysql:5.7
     container_name: database
     hostname: database
     ports:
@@ -113,10 +114,10 @@ services:
       resources:
         limits:
           memory: 500m
-    command: --init-file /data/application/init.sql
+    command: mysqld --innodb-flush-method=O_DSYNC --innodb-use-native-aio=OFF --init-file /data/application/init.sql
     volumes:
         - ./data/mysql/data:/var/lib/mysql
-        - ./init.sql:/data/application/init.sql
+        - ./data/mysql/init.sql:/data/application/init.sql
     environment:
         MYSQL_ROOT_USER: root
         MYSQL_ROOT_PASSWORD: secret
@@ -125,7 +126,7 @@ services:
         MYSQL_PASSWORD: secret
 
   zookeeper:
-    image: fjardim/zookeeper
+    image: wurstmeister/zookeeper:3.4.6
     container_name: zookeeper
     hostname: zookeeper
     ports:
@@ -138,7 +139,7 @@ services:
           memory: 500m
 
   kafka:
-    image: fjardim/kafka
+    image: wurstmeister/kafka:2.12-2.3.0
     container_name: kafka
     hostname: kafka
     ports:
@@ -156,7 +157,7 @@ services:
           memory: 500m
 
   presto-coordinator:
-    image: fjardim/prestodb
+    image: shawnzhu/prestodb:0.181
     container_name: presto
     hostname: presto
     ports:
@@ -169,11 +170,11 @@ services:
           memory: 500m
 
   hbase-master:
-    image: fjardim/hbase-master
+    image: bde2020/hbase-master:1.0.0-hbase1.2.6
     container_name: hbase-master
     hostname: hbase-master
     env_file:
-      - ./hbase/hbase-distributed-local.env
+      - ./data/hbase/hbase-distributed-local.env
     environment:
       SERVICE_PRECONDITION: "namenode:50070 datanode:50075 zookeeper:2181"
     ports:
@@ -186,12 +187,12 @@ services:
           memory: 500m
     
  
-  hbase-region:
-    image: fjardim/hbase-regionserver
+  hbase-regionserver:
+    image: bde2020/hbase-regionserver:1.0.0-hbase1.2.6
     container_name: hbase-regionserver
     hostname: hbase-regionserver
     env_file:
-      - ./hbase/hbase-distributed-local.env
+      - ./data/hbase/hbase-distributed-local.env
     environment:
       HBASE_CONF_hbase_regionserver_hostname: hbase-region
       SERVICE_PRECONDITION: "namenode:50070 datanode:50075 zookeeper:2181 hbase-master:16010"
@@ -203,7 +204,7 @@ services:
           memory: 500m
  
   mongo:
-    image: fjardim/mongo
+    image: mongo
     container_name: mongo
     hostname: mongo
     restart: always
@@ -220,7 +221,7 @@ services:
           memory: 500m
  
   mongo-express:
-    image: fjardim/mongo-express
+    image: mongo-express
     container_name: mongo_express
     hostname: mongo_express
     restart: always
@@ -236,7 +237,7 @@ services:
           memory: 200m
  
   kafkamanager:
-    image: fjardim/kafkamanager
+    image: kafkamanager/kafka-manager:2.0.0.2
     container_name: kafkamanager
     hostname: kafkamanager
     environment: 
@@ -251,7 +252,7 @@ services:
           memory: 200m
  
   metabase:
-    image: fjardim/metabase
+    image: metabase/metabase
     container_name: metabase
     hostname: metabase
     volumes:
@@ -266,12 +267,13 @@ services:
           memory: 500m
  
   nifi:
-    image: fjardim/nifi
+    image: apache/nifi
     container_name: nifi
     hostname: nifi
     volumes:
-      - ./data/nifi:/opt/nifi/nifi-current/flowfile_repository
-      - ./nifi/util:/util
+      #- ./data/nifi:/opt/nifi/nifi-current/flowfile_repository
+      #- ./data/nifi/flows:/opt/nifi/nifi-current/conf/flow.xml.gz
+      - ./data/nifi/util:/util
     environment:
       NIFI_WEB_HTTP_PORT: "9090"
     ports:
@@ -282,27 +284,26 @@ services:
         limits:
           memory: 500m
 
-  jupyter-notebook-custom:
-    image: fjardim/jupyter-spark
+  jupyter-spark:
+    image: jupyter-spark
     hostname: jupyter-spark
     container_name: jupyter-spark
     command: notebook
-    build:
-      context:  .
     env_file:
-      - ./jupyter/jupyter.env
+      - ./data/jupyter/jupyter.env
     ports:
       - 8889:8889
       - 4040:4040
+      - 4041:4041
+      - 4042:4042
     volumes:
        - ./data/notebooks:/mnt/notebooks/
     environment:
+       #SPARK_MASTER: spark://spark-master:7077 
        SPARK_MASTER: local[*]
        JUPYTER_PORT: 8889
     deploy:
       resources:
         limits:
           memory: 1g
-
-
 
