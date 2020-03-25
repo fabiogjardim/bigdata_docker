@@ -2,8 +2,7 @@ version: '3'
 services:
 
   namenode:
-    #image: bde2020/hadoop-namenode:2.0.0-hadoop2.7.4-java8
-    image: namenode_sqoop
+    image: fjardim/namenode_sqoop
     container_name: namenode
     hostname: namenode
     volumes:
@@ -20,7 +19,7 @@ services:
           memory: 500m
   
   datanode:
-    image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
+    image: fjardim/datanode
     container_name: datanode
     hostname: datanode
     volumes:
@@ -40,7 +39,7 @@ services:
           memory: 500m
   
   hive-server:
-    image: bde2020/hive:2.3.2-postgresql-metastore
+    image: fjardim/hive
     container_name: hive-server
     hostname: hive_server
     env_file:
@@ -58,7 +57,7 @@ services:
           memory: 500m
   
   hive-metastore:
-    image: bde2020/hive:2.3.2-postgresql-metastore
+    image: fjardim/hive
     container_name: hive_metastore
     hostname: hive_metastore
     env_file:
@@ -76,7 +75,7 @@ services:
           memory: 500m
   
   hive-metastore-postgresql:
-    image: bde2020/hive-metastore-postgresql:2.3.0
+    image: fjardim/hive-metastore
     container_name: hive-metastore-postgresql
     hostname: hive_metastore_postgresql
     volumes:
@@ -89,7 +88,7 @@ services:
           memory: 500m
 
   hue:
-    image: gethue/hue:20191107-135001
+    image: fjardim/hue
     hostname: hue
     container_name: hue
     dns: 8.8.8.8
@@ -105,7 +104,7 @@ services:
           memory: 500m
   
   database:
-    image: mysql:5.7
+    image: fjardim/mysql
     container_name: database
     hostname: database
     ports:
@@ -126,7 +125,7 @@ services:
         MYSQL_PASSWORD: secret
 
   zookeeper:
-    image: wurstmeister/zookeeper:3.4.6
+    image: fjardim/zookeeper
     container_name: zookeeper
     hostname: zookeeper
     ports:
@@ -139,7 +138,7 @@ services:
           memory: 500m
 
   kafka:
-    image: wurstmeister/kafka:2.12-2.3.0
+    image: fjardim/kafka
     container_name: kafka
     hostname: kafka
     ports:
@@ -157,7 +156,7 @@ services:
           memory: 500m
 
   presto-coordinator:
-    image: shawnzhu/prestodb:0.181
+    image: fjardim/prestodb
     container_name: presto
     hostname: presto
     ports:
@@ -170,7 +169,7 @@ services:
           memory: 500m
 
   hbase-master:
-    image: bde2020/hbase-master:1.0.0-hbase1.2.6
+    image: fjardim/hbase-master
     container_name: hbase-master
     hostname: hbase-master
     env_file:
@@ -188,7 +187,7 @@ services:
     
  
   hbase-regionserver:
-    image: bde2020/hbase-regionserver:1.0.0-hbase1.2.6
+    image: fjardim/hbase-regionserver
     container_name: hbase-regionserver
     hostname: hbase-regionserver
     env_file:
@@ -204,7 +203,7 @@ services:
           memory: 500m
  
   mongo:
-    image: mongo
+    image: fjardim/mongo
     container_name: mongo
     hostname: mongo
     restart: always
@@ -221,7 +220,7 @@ services:
           memory: 500m
  
   mongo-express:
-    image: mongo-express
+    image: fjardim/mongo-express
     container_name: mongo_express
     hostname: mongo_express
     restart: always
@@ -237,7 +236,7 @@ services:
           memory: 200m
  
   kafkamanager:
-    image: kafkamanager/kafka-manager:2.0.0.2
+    image: fjardim/kafkamanager
     container_name: kafkamanager
     hostname: kafkamanager
     environment: 
@@ -252,7 +251,7 @@ services:
           memory: 200m
  
   metabase:
-    image: metabase/metabase
+    image: fjardim/metabase
     container_name: metabase
     hostname: metabase
     volumes:
@@ -267,12 +266,11 @@ services:
           memory: 500m
  
   nifi:
-    image: apache/nifi
+    image: fjardim/nifi
     container_name: nifi
     hostname: nifi
     volumes:
-      #- ./data/nifi:/opt/nifi/nifi-current/flowfile_repository
-      #- ./data/nifi/flows:/opt/nifi/nifi-current/conf/flow.xml.gz
+      - ./data/nifi:/opt/nifi/nifi-current/flowfile_repository
       - ./data/nifi/util:/util
     environment:
       NIFI_WEB_HTTP_PORT: "9090"
@@ -285,7 +283,7 @@ services:
           memory: 500m
 
   jupyter-spark:
-    image: jupyter-spark
+    image: fjardim/jupyter-spark
     hostname: jupyter-spark
     container_name: jupyter-spark
     command: notebook
@@ -294,16 +292,14 @@ services:
     ports:
       - 8889:8889
       - 4040:4040
-      - 4041:4041
-      - 4042:4042
     volumes:
        - ./data/notebooks:/mnt/notebooks/
     environment:
-       #SPARK_MASTER: spark://spark-master:7077 
        SPARK_MASTER: local[*]
        JUPYTER_PORT: 8889
     deploy:
       resources:
         limits:
           memory: 1g
+
 
