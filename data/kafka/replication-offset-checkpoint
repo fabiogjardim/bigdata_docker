@@ -26,14 +26,14 @@ __consumer_offsets 18 0
 __consumer_offsets 37 0
 __consumer_offsets 15 0
 __consumer_offsets 24 0
-msg 0 3
+msg 0 0
 __consumer_offsets 38 0
 __consumer_offsets 17 0
 __consumer_offsets 48 0
-aula 0 4
+aula 0 0
 __consumer_offsets 19 0
-__consumer_offsets 11 6
-__consumer_offsets 13 3
+__consumer_offsets 11 1
+__consumer_offsets 13 0
 __consumer_offsets 2 0
 __consumer_offsets 43 0
 __consumer_offsets 6 0
@@ -50,5 +50,5 @@ __consumer_offsets 26 0
 __consumer_offsets 29 0
 __consumer_offsets 34 0
 __consumer_offsets 10 0
-__consumer_offsets 32 4
+__consumer_offsets 32 0
 __consumer_offsets 40 0
