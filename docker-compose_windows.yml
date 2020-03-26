@@ -24,7 +24,7 @@ services:
     hostname: datanode
     volumes:
       - /d/docker/bigdata_docker/data/hdfs/datanode:/hadoop/dfs/data
-      - /d/docker/bigdata_docker/data/hadoop/bank:/bank
+      #- /d/docker/bigdata_docker/data/hadoop/bank:/bank
     env_file:
       - ./data/hadoop/hadoop-hive.env
     environment:
