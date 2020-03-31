@@ -9,7 +9,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
 ## SOFTWARES NECESSÁRIOS
 #### Para a criação e uso do ambiente vamos utilizar git e docker
-   * Instalação do Docker no [Windows ou Mac](https://docs.docker.com/toolbox/overview/) ou no [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+   * Instalação do Docker ToolBox no [Windows ou Mac](https://docs.docker.com/toolbox/overview/) ou no [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
    *  [Instalação do git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
 
 ## SETUP
@@ -18,7 +18,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
 #### Criação do diretório docker
    *  No Windows:
       *  Criar na raiz do seu drive o diretório docker
-         ex: D:\docker
+         ex: C:\docker
           
    * No Linux:
       * Criar o diretório na home do usuário
@@ -26,6 +26,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
 #### Baixar o repo dentro diretório docker
           git clone https://github.com/fabiogjardim/bigdata_docker.git
+*OBS: Existe um git na instação do Docker ToolBox, caso já tenha instalado não precisa instalar novamente*
 
 ### No diretório bigdata_docker vai existir os seguintes objetos
 ![ls](ls.JPG)
@@ -37,7 +38,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
             mv docker-compose_windows.yml docker-compose.yml
       *Executar o arquivo virtualbox_config.bat*
          <br><i>O arquivo bat cria/reacria a VM default com disco de até 100GB, 8GB de memória, drive do repo compartilhado como /d e todas as portas necessárias mapeadas</i></br>
-         <br><i>OBS: se o ser driver raiz for diferente de D:, altere o arquivo virutalbox_config.bat na parte indicada no comentário</i></br>  
+         <br><i>OBS: se o ser driver raiz for diferente de C:, altere o arquivo virutalbox_config.bat na parte indicada no comentário</i></br>  
    *  No Linux: *Não é necessário alterar nem executar nada*
 
 ## INICIANDO O AMBIENTE
