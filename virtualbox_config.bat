@@ -16,7 +16,7 @@ echo
 echo *****************************************
 echo **** RECRIANDO VM DEFAULT
 echo *****************************************
-docker-machine create -d virtualbox --virtualbox-disk-size "100000"  default
+docker-machine create -d virtualbox --virtualbox-disk-size "50000"  default
 
 echo 
 echo *****************************************
@@ -31,7 +31,7 @@ echo *****************************************
 
 :: se a unidade de disco não for a D: altera para a unidade correta
 :: altear apenas o "d:/" para "c:/"
-VBoxManage.exe sharedfolder add default --name "d" --hostpath "d:/" --automount
+VBoxManage.exe sharedfolder add default --name "d" --hostpath "c:/" --automount
 VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root 1
 VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/d 1
 
@@ -39,7 +39,7 @@ echo
 echo *****************************************
 echo **** AUMENTANDO MEMORIA DA VM DEFAULT
 echo *****************************************
-VBoxManage.exe  modifyvm default --memory 8192
+VBoxManage.exe  modifyvm default --memory 2048
 
 
 echo 
