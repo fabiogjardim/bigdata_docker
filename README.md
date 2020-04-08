@@ -31,7 +31,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
 #### Em um terminal/DOS, dentro diretório docker, realizar o clone do projeto no github
           git clone https://github.com/fabiogjardim/bigdata_docker.git
 
-### No diretório bigdata_docker vai existir os seguintes objetos
+#### No diretório bigdata_docker vai existir os seguintes objetos
 ![ls](ls.JPG)
 
    *  No Windows:
