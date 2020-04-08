@@ -36,15 +36,15 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
    *  No Windows:
    
-      *Abrir o Docker Quickstart Terminal*
+      *Abrir o Docker Quickstart Terminal, isso fará com que a VM default seja criada no VirtualBox*
       ![ls](dockertoolbox.jpg)  
 
-      *renomear o arquivo docker-compose_windows.yml para docker-compose.yml*
+      *No DOS, dentro do diretório bigdata_docker, renomear o arquivo docker-compose_windows.yml para docker-compose.yml*
 
             move docker-compose_windows.yml docker-compose.yml
       *Executar o arquivo virtualbox_config.bat*
          <br><i>O arquivo bat cria/reacria a VM default com disco de até 100GB, 8GB de memória, drive do repo compartilhado como /d e todas as portas necessárias mapeadas</i></br>
-         <br><i>OBS: se o ser driver raiz for diferente de C:, altere o arquivo virutalbox_config.bat na parte indicada no comentário</i></br>  
+         <br><i>OBS: se o ser driver raiz for diferente de C:, altere o arquivo virutalbox_config.bat na parte indicada no comentário. A memória também pode ser alterada no local indicado.</i></br>  
 ![ls](bat.jpg)         
    *  No Linux: *Não é necessário alterar nem executar nada*
 
