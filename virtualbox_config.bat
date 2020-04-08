@@ -16,7 +16,7 @@ echo
 echo *****************************************
 echo **** RECRIANDO VM DEFAULT
 echo *****************************************
-docker-machine create -d virtualbox --virtualbox-disk-size "50000"  default
+docker-machine create -d virtualbox --virtualbox-disk-size "100000"  default
 
 echo 
 echo *****************************************
@@ -39,7 +39,7 @@ echo
 echo *****************************************
 echo **** AUMENTANDO MEMORIA DA VM DEFAULT
 echo *****************************************
-VBoxManage.exe  modifyvm default --memory 2048
+VBoxManage.exe  modifyvm default --memory 8192
 
 
 echo 
