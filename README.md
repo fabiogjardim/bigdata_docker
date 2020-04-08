@@ -9,13 +9,17 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
 ## SOFTWARES NECESSÁRIOS
 #### Para a criação e uso do ambiente vamos utilizar git e docker
-   * Instalação do Docker ToolBox no [Windows](https://docs.docker.com/toolbox/toolbox_install_windows/) / [Mac](https://docs.docker.com/toolbox/overview/) / [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+   * Instalação do Docker ToolBox no [Windows](https://docs.docker.com/toolbox/toolbox_install_windows/) / [Mac](https://docs.docker.com/toolbox/overview/) ou o docker no [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
    *  [Instalação do git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
+   
+*OBS: Existe um git na instação do Docker ToolBox, caso já tenha instalado não precisa instalar novamente*
 
 ## SETUP
 *OBS: Esse passo deve ser realizado apena uma vez. Após o ambiente criado, utilizar o docker-compose para iniciar os containers como mostrado no tópico INICIANDO O AMBIENTE*
 
-#### Criação do diretório docker
+#### Criação do diretório docker:
+*OBS: A criação do diretório é importante para os mapeamentos necessários*
+
    *  No Windows:
       *  Criar na raiz do seu drive o diretório docker
          ex: C:\docker
@@ -24,9 +28,8 @@ Ambiente para estudo dos principais frameworks big data em docker.
       * Criar o diretório na home do usuário
         ex: /home/user/docker
 
-#### Baixar o repo dentro diretório docker
+#### Em um terminal/DOS, dentro diretório docker, realizar o clone do projeto no github
           git clone https://github.com/fabiogjardim/bigdata_docker.git
-*OBS: Existe um git na instação do Docker ToolBox, caso já tenha instalado não precisa instalar novamente*
 
 ### No diretório bigdata_docker vai existir os seguintes objetos
 ![ls](ls.JPG)
@@ -35,7 +38,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
       *renomear o arquivo docker-compose_windows.yml para docker-compose.yml*
 
-            mv docker-compose_windows.yml docker-compose.yml
+            move docker-compose_windows.yml docker-compose.yml
       *Executar o arquivo virtualbox_config.bat*
          <br><i>O arquivo bat cria/reacria a VM default com disco de até 100GB, 8GB de memória, drive do repo compartilhado como /d e todas as portas necessárias mapeadas</i></br>
          <br><i>OBS: se o ser driver raiz for diferente de C:, altere o arquivo virutalbox_config.bat na parte indicada no comentário</i></br>  
