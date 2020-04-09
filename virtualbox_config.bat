@@ -29,8 +29,8 @@ echo *****************************************
 echo **** CONFIGURANDO DISCOS COMPARTILHADOS
 echo *****************************************
 
-:: se a unidade de disco não for a D: altera para a unidade correta
-:: altear apenas o "d:/" para "c:/"
+:: se a unidade de disco não for a C: altera para a unidade correta
+:: altear apenas o "c:/" para a outra. ex: "d:/"
 VBoxManage.exe sharedfolder add default --name "d" --hostpath "c:/" --automount
 VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root 1
 VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/d 1
