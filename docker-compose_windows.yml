@@ -146,8 +146,8 @@ services:
     hostname: kafka
     ports:
       - "9092:9092"
-    volumes:
-      - /d/docker/bigdata_docker/data/kafka:/kafka/kafka-logs-kafka
+    #volumes:
+    #  - /d/docker/bigdata_docker/data/kafka:/kafka/kafka-logs-kafka
     depends_on:
       - zookeeper
     environment:
