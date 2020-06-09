@@ -173,7 +173,7 @@ services:
     container_name: hbase-master
     hostname: hbase-master
     env_file:
-      - ./data/hbase/hbase-distributed-local.env
+      - ./data/hbase/hbase-standalone.env
     environment:
       SERVICE_PRECONDITION: "namenode:50070 datanode:50075 zookeeper:2181"
     ports:
@@ -191,7 +191,7 @@ services:
     container_name: hbase-regionserver
     hostname: hbase-regionserver
     env_file:
-      - ./data/hbase/hbase-distributed-local.env
+      - ./data/hbase/hbase-standalone.env
     environment:
       HBASE_CONF_hbase_regionserver_hostname: hbase-region
       SERVICE_PRECONDITION: "namenode:50070 datanode:50075 zookeeper:2181 hbase-master:16010"
