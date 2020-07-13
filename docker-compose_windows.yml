@@ -188,23 +188,6 @@ services:
         limits:
           memory: 500m
     
- 
-  hbase-regionserver:
-    image: fjardim/hbase-regionserver
-    container_name: hbase-regionserver
-    hostname: hbase-regionserver
-    env_file:
-      - ./data/hbase/hbase-standalone.env
-    environment:
-      HBASE_CONF_hbase_regionserver_hostname: hbase-region
-      SERVICE_PRECONDITION: "namenode:50070 datanode:50075 zookeeper:2181 hbase-master:16010"
-    ports:
-      - 16030:16030
-    deploy:
-      resources:
-        limits:
-          memory: 500m
- 
   mongo:
     image: fjardim/mongo
     container_name: mongo
