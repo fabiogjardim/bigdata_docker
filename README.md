@@ -150,6 +150,11 @@ Ambiente para estudo dos principais frameworks big data em docker.
    ##### MySQL
     Usuário: root
     Senha: secret
+   
+   ##### MongoDB
+    Usuário: root
+    Senha: root
+    Authentication Database: admin
 
 ## Imagens   
 
