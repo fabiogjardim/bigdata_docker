@@ -9,7 +9,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
 ## SOFTWARES NECESSÁRIOS
 #### Para a criação e uso do ambiente vamos utilizar git e docker
-   * Instalação do Docker ToolBox no [Windows](https://docs.docker.com/toolbox/toolbox_install_windows/) / [Mac](https://docs.docker.com/toolbox/overview/) ou o docker no [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+   * Instalação do Docker ToolBox no Windows faça o download em [Docker](https://drive.google.com/drive/folders/12iEACFEjaWfMcZr4c1o3YAbKE9kiH-lb?usp=sharing) ou o docker no [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
    *  [Instalação do git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
    
 *OBS: Existe um git na instação do Docker ToolBox, caso já tenha instalado não precisa instalar novamente*
